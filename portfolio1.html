@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Premium Portfolio</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#000;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* ===== Animated Neon Background ===== */
+body::before{
+  content:"";
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:radial-gradient(circle at 20% 30%,#0ff3 0%,transparent 40%),
+             radial-gradient(circle at 80% 70%,#f0f3 0%,transparent 40%);
+  z-index:-1;
+  animation:moveBg 8s infinite alternate;
+}
+
+@keyframes moveBg{
+  0%{transform:translateY(-20px);}
+  100%{transform:translateY(20px);}
+}
+
+/* ===== Navbar ===== */
+nav{
+  position:fixed;
+  width:100%;
+  padding:6px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.8);
+  backdrop-filter:blur(8px);
+  z-index:1000;
+}
+
+nav h2{
+  font-family:'Orbitron',sans-serif;
+  color:#00f2fe;
+}
+
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#00f2fe;
+}
+
+/* ===== Hero ===== */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.profile-img{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  object-fit:fill;
+  margin-bottom:20px;
+  border:3px solid #00f2fe;
+  box-shadow:0 0 25px #00f2fe;
+  transition:0.4s;
+}
+
+.profile-img:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 35px #ff00ff;
+}
+
+
+.hero h1{
+  font-size:55px;
+  font-family:'Orbitron',sans-serif;
+  background:linear-gradient(90deg,#00f2fe,#ff00ff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.typing{
+  font-size:22px;
+  margin:20px 0;
+  height:30px;
+}
+
+/* Buttons */
+.btn{
+  padding:12px 30px;
+  margin:10px;
+  border-radius:30px;
+  border:2px solid #00f2fe;
+  background:transparent;
+  color:#00f2fe;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#00f2fe;
+  color:black;
+  box-shadow:0 0 20px #00f2fe;
+}
+
+/* Social Icons */
+.social-icons{
+  margin-top:20px;
+}
+
+.social-icons a{
+  color:#00f2fe;
+  font-size:28px;
+  margin:0 15px;
+  transition:0.3s;
+}
+
+.social-icons a:hover{
+  color:#ff00ff;
+  transform:scale(1.2);
+}
+
+/* Sections */
+section{
+  padding:80px 8%;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:40px;
+  color:#00f2fe;
+}
+
+/* Skills */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.skill-card{
+  width:150px;
+}
+
+
+.skill-card{
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  background:#111;
+  border:1px solid #00f2fe33;
+  transition:0.3s;
+}
+
+.skill-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 20px #00f2fe;
+}
+
+/* Projects */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.project-card{
+  background:#111;
+  padding:25px;
+  border-radius:15px;
+  transition:0.3s;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.project-card p{
+  margin:15px 0 20px 0;
+  line-height:1.6;
+}
+
+.project-card .btn{
+  align-self:center;
+}
+
+.project-card a{
+  text-decoration: none;
+}
+
+.project-card:hover{
+  transform:rotateY(10deg) scale(1.05);
+  box-shadow:0 0 25px #ff00ff;
+}
+
+/* Contact */
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  background:#111;
+  border:1px solid #00f2fe;
+  color:white;
+  border-radius:8px;
+}
+
+input:focus,textarea:focus{
+  outline:none;
+  box-shadow:0 0 15px #00f2fe;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:#000;
+  border-top:1px solid #222;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>PB</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <img src="Poomani Bharathi.jpeg" alt="Poomani Bharathi" class="profile-img">
+  <h1>Poomani Bharathi</h1>
+  <div class="typing" id="typing"></div>
+  <button class="btn">Contact Me</button>
+
+  <div class="social-icons">
+    <a href="https://www.linkedin.com/in/poomani-bharathi-b-b37656383/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/sri-200331"  target="_blank"><i class="fab fa-github"></i></a>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p style="text-align:center; max-width:700px; margin:auto;">
+    I am a passionate MERN Stack Developer who builds interactive, scalable and modern web applications with stunning UI.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill-card">HTML</div>
+    <div class="skill-card">CSS</div>
+    <div class="skill-card">JavaScript</div>
+    <div class="skill-card">My SQL</div>
+    <div class="skill-card">React</div>
+    <div class="skill-card">Node.js</div>
+    <div class="skill-card">Express.js</div>
+    <div class="skill-card">MongoDB</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+     <div class="project-card">
+         <h3>clean city</h3>
+        <p>CleanCity – Smart Waste Management System
+            A web-based platform that enables citizens to report unclean areas, track waste collection, and promote eco-friendly practices, 
+            fostering cleaner and sustainable cities</p>
+        <a href="https://sri-200331.github.io/project/"  class="btn" >View Project</a>
+     </div>
+ 
+
+     <div class="project-card">
+          <h3>Budget Tracker</h3>
+          <p>Personal Budget Tracker
+            A simple finance management tool that helps track income, expenses, and budgets with categorized records and visual insights
+             for better money management.</p>
+         <a href="https://sri-200331.github.io/project-2/" class="btn">View Project</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <input type="text" placeholder="Your Name">
+  <input type="email" placeholder="Your Email">
+  <textarea rows="4" placeholder="Your Message"></textarea>
+  <button class="btn">Send Message</button>
+</section>
+
+<footer>
+  © 2026 Poomani Bharathi | All Rights Reserved
+</footer>
+
+<script>
+// Typing Effect
+const text = ["MERN Stack Developer","Frontend Developer","Backend Developer"];
+let i=0,j=0,current="",isDeleting=false;
+const typing = document.getElementById("typing");
+
+function type(){
+  current = text[i];
+  if(!isDeleting){
+    typing.textContent = current.slice(0,++j);
+    if(j===current.length) isDeleting=true;
+  }else{
+    typing.textContent = current.slice(0,--j);
+    if(j===0){ isDeleting=false; i=(i+1)%text.length;}
+  }
+  setTimeout(type,isDeleting?50:100);
+}
+type();
+</script>
+
+</body>
+</html>
